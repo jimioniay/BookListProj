@@ -5,3 +5,7 @@
 small {
     font-size: 1em;
 }
+
+a {
+    cursor: pointer;
+}
