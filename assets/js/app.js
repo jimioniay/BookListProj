@@ -10,14 +10,23 @@ class Book {
     localStorageKey = "books";
 
     getID() {
-        let id;
+        let max = 0;
         if (localStorage.getItem(this.localStorageKey) === null) {
-            id = 1;
+            return max = 1;
         }
         else {
-            id = (JSON.parse(localStorage.getItem(this.localStorageKey))).length + 1;
+            const arr = JSON.parse(localStorage.getItem(this.localStorageKey));
+            for(let i=0; i <arr.length; i++){
+                let tempMax = arr[i].id ;
+                if (tempMax > max ){
+                    max = tempMax;
+                }
+                else {
+                    max = max;
+                }
+            }
         }
-        return id;
+        return max + 1;
     }
 }
 
